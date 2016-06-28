@@ -26,6 +26,10 @@ public class Avaliador {
     }
 
     public void avalia(Leilao leilao) {
+
+        if (leilao.getLances().size() == 0)
+            throw new RuntimeException("Não é possível avaliar esse leilao");
+
         for (Lance lance : leilao.getLances()) {
             if (lance.getValor() > maiorDeTodos)
                 maiorDeTodos = lance.getValor();
@@ -33,6 +37,11 @@ public class Avaliador {
                 menorDeTodos = lance.getValor();
         }
 
+        List<Lance> tresMaiores = getTresMaiores(leilao);
+
+    }
+
+    public List<Lance> getTresMaiores(Leilao leilao) {
         maiores = new ArrayList<Lance>(leilao.getLances());
         Collections.sort(maiores, new Comparator<Lance>() {
             @Override
@@ -45,10 +54,6 @@ public class Avaliador {
                 return 0;
             }
         });
-        maiores = maiores.subList(0, maiores.size() > 3 ? 3 : maiores.size());
-    }
-
-    public List<Lance> getTresMaiores() {
-        return maiores;
+        return maiores = maiores.subList(0, maiores.size() > 3 ? 3 : maiores.size());
     }
 }
