@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class TesteDoAvaliador {
+public class AvaliadorTeste {
 
     private Avaliador leiloeiro;
     private Usuario joao;

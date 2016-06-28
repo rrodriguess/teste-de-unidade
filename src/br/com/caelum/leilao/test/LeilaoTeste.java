@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by renato on 28/06/16.
  */
-public class TesteLeilao {
+public class LeilaoTeste {
 
     @Test
     public void deveReceberUmLance() {
